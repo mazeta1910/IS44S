@@ -1,0 +1,17 @@
+O que é uma interface?
+	Interface para nos será o suporte computacional pelo qual o usuário vai acionar as 
+	funções do sistema e dele vai receber informações necessárias para as suas tarefas.
+	
+O que é interação?
+	É um ato de comunicação, que troca informações entre o ser humano e o computador.
+	
+
+Interface:
+	O ponto de contato entre usuário e sistema.
+	• Elementos visíveis
+	• A faxada do sistema
+	
+Interação
+	O processo dinâmico de comunicação.
+	• Ações
+	• A "conversa" bidirecional
