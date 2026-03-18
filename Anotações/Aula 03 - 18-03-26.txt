@@ -1,0 +1,5 @@
+O que é ISHC?
+	Disciplina preocupada com o design, a avaliação e a implementação
+	de sistemas computacionais interativos para uso humano e com os
+	estudo dos fenômenos que o circundam
+	Entrada para usuário e saída para as ferramentas.
