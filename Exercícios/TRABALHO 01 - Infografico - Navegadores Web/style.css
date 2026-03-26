@@ -52,7 +52,7 @@ body {
 
 .university-brand {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 15px;
 }
 
@@ -63,7 +63,7 @@ body {
   padding: 8px 12px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  filter: none !important; 
+  filter: none !important;
   transition: transform 0.2s;
 }
 
@@ -76,7 +76,7 @@ body {
   font-size: 0.9rem;
   font-weight: 700;
   color: #ffffff;
-  max-width: 200px; 
+  max-width: 200px;
   line-height: 1.2;
 }
 
@@ -88,7 +88,7 @@ body {
 }
 
 .academic-details p strong {
-  color: #facc15; 
+  color: #facc15;
 }
 
 /* Responsividade para telas menores */
@@ -160,7 +160,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 1rem;
 }
 
 .timeline::before {
@@ -305,23 +305,27 @@ body {
 
 /* Pop-up interativo */
 .img-popup {
-  position: fixed;
-  background: rgba(20, 30, 40, 0.96);
+  position: absolute;
+  background: rgba(
+    15,
+    23,
+    42,
+    0.98
+  ); /* Um tom levemente mais escuro para contraste */
   backdrop-filter: blur(12px);
   border-radius: 1.5rem;
-  padding: 1rem 1.2rem;
-  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 215, 150, 0.4);
-  z-index: 1000;
+  padding: 1.5rem; /* Aumentado o respiro interno */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(244, 185, 66, 0.4); /* Borda puxando para o dourado da UTFPR */
+  z-index: 9999;
   pointer-events: none;
-  transition: opacity 0.15s ease;
-  max-width: 800px;
-  width: auto;
+  transition: opacity 0.2s ease;
+  width: 850px;
+  max-width: 90vw;
   color: #f0f3f8;
-  font-size: 0.85rem;
-  display: flex;
+  display: none;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .img-popup img {
@@ -331,16 +335,21 @@ body {
 }
 
 .popup-title {
+  font-family: Tahoma, sans-serif;
   font-weight: bold;
-  font-size: 1rem;
-  color: #facc15;
-  border-left: 3px solid #facc15;
-  padding-left: 0.5rem;
+  font-size: 1.3rem; /* Aumentado de 1rem para 1.3rem */
+  color: #facc15; /* Cor amarela da UTFPR */
+  border-left: 4px solid #facc15;
+  padding-left: 0.75rem;
+  line-height: 1.2;
 }
 
 .popup-desc {
-  line-height: 1.4;
-  font-size: 0.8rem;
+  font-family: Tahoma, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem; /* Aumentado de 0.8rem para 1rem */
+  color: #cbd5e1;
+  text-align: justify;
 }
 
 /* Bloco extra para impressão (imagem e curiosidade) */
@@ -349,10 +358,10 @@ body {
 }
 
 .trends {
-  margin-top: 3rem;
+  margin-top: 1rem;
   background: #1e2f3c;
   border-radius: 2rem;
-  padding: 1.8rem 2rem;
+  padding: 0.3rem 2rem;
   color: #eef4fa;
   box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
 }
@@ -406,49 +415,6 @@ body {
   font-size: 0.8rem;
   color: #5b7f99;
   font-weight: 500;
-}
-
-@media (max-width: 680px) {
-  .infographic-container {
-    padding: 1rem;
-  }
-  .timeline::before {
-    left: 1.4rem;
-  }
-  .timeline-marker {
-    width: 3rem;
-  }
-  .year-circle {
-    width: 48px;
-    height: 48px;
-    font-size: 0.9rem;
-  }
-  .timeline-item:last-child .year-circle {
-    font-size: 0.7rem;
-    padding: 0 3px;
-  }
-  .card-title h3 {
-    font-size: 1.2rem;
-  }
-  .card-img {
-    width: 40px;
-    height: 40px;
-  }
-  .card {
-    padding: 1rem;
-  }
-  .header h1 {
-    font-size: 1.8rem;
-  }
-  .trends h2 {
-    font-size: 1.3rem;
-  }
-  .img-popup {
-    max-width: 280px;
-  }
-  .img-popup img {
-    max-height: 200px;
-  }
 }
 
 /* =========================================
@@ -505,32 +471,54 @@ body {
   margin-bottom: 0.2rem;
 }
 
-/* Bloco de Conclusão Aprimorado (Efeito Vidro) */
+/* ==============================================
+   ESTÉTICA "IMPACTO": Substitua o bloco .conclusion-block
+   ============================================== */
 .conclusion-block {
-  margin-top: 2rem;
-  background: linear-gradient(to right, #ffffff, #f4f8fb);
-  border: none;
-  border-left: 8px solid #f4b942;
-  border-radius: 0 2rem 2rem 0;
-  padding: 1rem 4rem;
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #155a7e 0%, #0f2b3d 100%); /* Fundo azul rico e imponente */
+  border-radius: 2rem;
+  padding: 3.5rem 5rem;
+  box-shadow: 0 20px 40px rgba(15, 43, 61, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
+  text-align: center; /* Centralizado dá mais autoridade */
+  overflow: hidden;
+}
+
+/* Marca d'água de Aspas Gigantes no fundo */
+.conclusion-block::before {
+  content: '“';
+  position: absolute;
+  top: -40px;
+  left: 30px;
+  font-size: 15rem;
+  color: rgba(255, 255, 255, 0.04);
+  font-family: Georgia, serif; /* Fonte serifada clássica para as aspas */
+  line-height: 1;
+  pointer-events: none;
 }
 
 .conclusion-block h2 {
-  color: #155a7e;
-  font-size: 2rem;
+  color: #facc15; /* Amarelo da UTFPR estourando no azul escuro */
+  font-size: 2.2rem;
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  border-left: none; /* Remove a borda que tínhamos antes */
 }
 
 .conclusion-block p {
-  color: #1f3a4b;
+  color: #e2e8f0; /* Um tom de cinza super claro, muito melhor que branco puro */
   line-height: 1.8;
-  font-size: 1.15rem;
-  max-width: 100%;
-  margin: 0;
+  font-size: 1.25rem;
+  margin: 0 auto;
   text-align: justify;
+  position: relative;
+  z-index: 2;
+  max-width: 95%;
 }
 
 /* Classes para Animação de Scroll */
@@ -596,6 +584,76 @@ body {
   text-align: right;
 }
 
+/* Estilização do Gráfico Resumo e Referência */
+.visual-summary {
+  margin: 3rem auto; /* Dá um respiro grande entre a timeline e a visão de futuro */
+  max-width: 1000px; /* Não deixa a imagem ficar gigantesca em monitores 4k */
+  width: 90%;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fundo branco translúcido para a imagem preta e branca se destacar */
+  backdrop-filter: blur(5px);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 215, 150, 0.3); /* Borda dourada sutil UTFPR */
+  text-align: center;
+}
+
+.visual-summary h3 {
+  font-family: Tahoma, sans-serif;
+  font-size: 1.8rem;
+  color: #155a7e;
+  margin-bottom: 2rem;
+  border-bottom: 2px dashed #90a9c2;
+  padding-bottom: 1rem;
+}
+
+.visual-summary figure {
+  margin: 0;
+}
+
+.visual-summary img {
+  max-width: 100%; /* Garante responsividade total */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.visual-summary figcaption {
+  font-family: Tahoma, sans-serif;
+  font-size: 0.9rem; /* Fonte menor para não brigar com o título */
+  color: #5b7f99; /* Um tom de cinza-azulado discreto do seu palette */
+  margin-top: 15px;
+  text-align: center;
+}
+
+.visual-summary figcaption a {
+  color: #2c7cb6; /* Blue da timeline para consistência */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.visual-summary figcaption a:hover {
+  color: #f4b942; /* Amarelo da UTFPR no hover */
+  text-decoration: underline;
+}
+
+/* Ajuste para impressão */
+@media print {
+  .visual-summary {
+    background: white;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
+
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
   .footer-content {
@@ -652,19 +710,135 @@ body {
     color: #1a2c3e;
     margin-top: 0.3rem;
   }
+  /* ==============================================
+   ESTÉTICA "FUTURO": Substitua todo o bloco .trends
+   ============================================== */
   .trends {
-    background: #f5f5f5;
-    color: #1a2c3e;
-    page-break-before: avoid;
+    margin-top: 4rem; /* Mais respiro antes de começar */
+    background: linear-gradient(
+      135deg,
+      #0b1320 0%,
+      #162840 100%
+    ); /* Fundo futurista profundo */
+    border-radius: 2rem;
+    padding: 3.5rem;
+    color: #eef4fa;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(44, 124, 182, 0.3);
+    position: relative;
+    overflow: hidden;
   }
+
+  /* Efeito de brilho de fundo suave */
+  .trends::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center,
+      rgba(44, 124, 182, 0.08) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+
+  .trends h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #facc15;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(250, 204, 21, 0.2);
+    padding-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .trends-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    ); /* Auto-ajusta para não quebrar feio */
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
   .trend-card {
-    background: #e9ecef;
+    background: rgba(255, 255, 255, 0.03); /* Efeito vidro escuro */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 4px solid #facc15; /* Linha de destaque no topo */
+    border-radius: 1rem;
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: justify;
+    position: relative;
   }
-  .footer-note {
-    color: #6c757d;
+
+  /* Efeito de flutuação e mudança de cor ao passar o mouse */
+  .trend-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    border-top-color: #2c7cb6;
   }
-  .badge-era,
-  .header {
-    break-inside: avoid;
+
+  .trend-card strong {
+    color: #facc15;
+    font-size: 1.15rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 680px) {
+    .infographic-container {
+      padding: 1rem;
+    }
+    .timeline::before {
+      left: 1.4rem;
+    }
+    .timeline-marker {
+      width: 3rem;
+    }
+    .year-circle {
+      width: 48px;
+      height: 48px;
+      font-size: 0.9rem;
+    }
+    .timeline-item:last-child .year-circle {
+      font-size: 0.7rem;
+      padding: 0 3px;
+    }
+    .card-title h3 {
+      font-size: 1.2rem;
+    }
+    .card-img {
+      width: 40px;
+      height: 40px;
+    }
+    .card {
+      padding: 1rem;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+    }
+    .trends h2 {
+      font-size: 1.3rem;
+    }
+    .img-popup {
+      max-width: 280px;
+    }
+    .img-popup img {
+      max-height: 200px;
+    }
   }
 }

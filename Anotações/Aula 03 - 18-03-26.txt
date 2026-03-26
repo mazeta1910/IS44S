@@ -1,5 +1,4 @@
-O que é ISHC?
-	Disciplina preocupada com o design, a avaliação e a implementação
-	de sistemas computacionais interativos para uso humano e com os
-	estudo dos fenômenos que o circundam
-	Entrada para usuário e saída para as ferramentas.
+KHTML é um motor de renderização criado para o navegador Konqueror, do ambiente Linux/KDE. Ele interpretava código HTML e CSS para mostrar páginas.
+Resumindo: KHTML foi o avô técnico dos motores que hoje movem Safari, Chrome, Edge e outros navegadores.
+
+https://www.reviversoft.com/pt/blog/2011/08/infographic-a-history-of-browser-usage/
