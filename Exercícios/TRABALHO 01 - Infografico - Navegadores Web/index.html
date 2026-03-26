@@ -10,50 +10,86 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="academic-header">
+      <div class="header-content">
+        <div class="university-brand">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/06/UTFPR_logo.svg"
+            alt="Logo UTFPR"
+            class="utfpr-logo-inverted"
+          />
+          <p>Universidade Tecnológica Federal do Paraná - Campus Pato Branco</p>
+        </div>
+
+        <div class="academic-details">
+          <p><strong>Disciplina:</strong> Interação Ser Humano-Computador</p>
+          <p><strong>Professora:</strong> Drª. Soelaine Rodrigues Ascari</p>
+          <p>
+            <strong>Acadêmicos:</strong> Matheus C. P. Santos & Tiago A. Sanguanini
+          </p>
+        </div>
+      </div>
+    </header>
     <div class="infographic-container">
       <div class="header">
-        <h1>📡 EVOLUÇÃO DOS NAVEGADORES WEB</h1>
+        <h1>EVOLUÇÃO DOS NAVEGADORES WEB</h1>
         <p>
           Do WorldWideWeb de 1990 aos navegadores com IA de 2026 — passe o mouse
           sobre os ícones para ver imagens e curiosidades.
         </p>
         <div class="badge-era">
-          <span class="badge">🕸️ 1990–1999: GÊNESE</span>
-          <span class="badge">⚔️ 2000–2009: GUERRA & RENOVAÇÃO</span>
-          <span class="badge">🚀 2010–2019: DOMÍNIO CHROME</span>
-          <span class="badge">🧠 2020–2026: PRIVACIDADE + IA</span>
+          <span class="badge">1990–1999: GÊNESE</span>
+          <span class="badge">2000–2009: GUERRA & RENOVAÇÃO</span>
+          <span class="badge">2010–2019: DOMÍNIO CHROME</span>
+          <span class="badge">2020–2026: PRIVACIDADE + IA</span>
         </div>
       </div>
 
       <div class="timeline" id="timeline"></div>
 
-      <div class="trends">
-        <h2>🔮 PANORAMA 2026 • O FUTURO DOS NAVEGADORES</h2>
+      <div class="trends fade-in-section">
+        <h2>VISÃO DE FUTURO (2036) • A ERA DA DELEGAÇÃO</h2>
         <div class="trends-grid">
           <div class="trend-card">
-            <strong>🏆 Chromium domina</strong><br />Chrome, Edge, Brave, Opera,
-            Vivaldi — mais de 80% do mercado. Firefox mantém nicho de
-            privacidade; Safari forte no ecossistema Apple.
+            <strong>A Web Generativa (O Fim da Página Estática)</strong><br />Em
+            10 anos, o navegador deixará de ser um mero leitor de HTML para se
+            tornar um sintetizador de interfaces. Em vez de o usuário abrir
+            múltiplas abas para pesquisar algo, o motor de IA compilará as
+            fontes e renderizará uma página única, personalizada e dinâmica em
+            tempo real. A internet original estrutural ficará escondida nos
+            bastidores.
           </div>
           <div class="trend-card">
-            <strong>🛡️ Privacidade como diferencial</strong><br />Bloqueio de
-            rastreadores, fingerprinting e sandboxing avançado são prioridades
-            em Brave, Firefox e Safari.
+            <strong>Interação por Delegação (A Perda de Agência)</strong><br />O
+            "apontar e clicar" cederá espaço ao "comando". A comodidade de ter
+            assistentes nativos resolvendo tarefas complexas terceirizará a
+            análise crítica. Ao delegar a pesquisa e a leitura à máquina, o
+            usuário perderá o processo ativo de investigação, limitando-se aos
+            vieses e às respostas prontas do algoritmo.
           </div>
           <div class="trend-card">
-            <strong>⚡ IA on‑device</strong><br />Modelos pequenos rodando
-            localmente para resumos, ações de voz, detecção de scams e tradução
-            em tempo real, sem envio de dados para nuvem.
+            <strong>O Perfilamento On-Device (O Novo Panóptico)</strong
+            ><br />Sob a promessa de "privacidade" rodando modelos locais, o
+            rastreamento ficará mais íntimo. O navegador aprenderá o seu ritmo
+            de digitação, padrões de clique e o tempo exato de retenção em cada
+            parágrafo, criando um perfil comportamental altamente preciso para
+            rentabilizar a sua "produtividade".
           </div>
           <div class="trend-card">
-            <strong>🧩 Navegadores produtividade</strong><br />Arc, SigmaOS e
-            ferramentas com gerenciamento de abas por IA, splits automáticos e
-            fluxos de trabalho personalizados.
+            <strong>Jardins Murados (O Vendor Lock-in Extremo)</strong><br />A
+            ideia do navegador como uma "janela neutra" para a web desaparecerá.
+            Eles se consolidarão como minissistemas operacionais fechados
+            (silos). Com o fluxo de trabalho, documentos e assistentes de IA
+            amarrados a um único motor, migrar de navegador em 2036 será tão
+            complexo quanto trocar de sistema operacional hoje.
           </div>
           <div class="trend-card">
-            <strong>🕹️ WebAssembly e apps nativos</strong><br />Navegadores
-            executam aplicações de alto desempenho (Figma, Adobe Photoshop Web,
-            jogos AAA) com performance quase nativa.
+            <strong>A Ilusão da Simplicidade Absoluta</strong><br />A interface
+            visual será absurdamente minimalista — talvez apenas uma barra
+            flutuante ou um prompt central. No entanto, ao ocultar toda a
+            infraestrutura da internet sob essa camada automatizada, o design
+            tornará o usuário comum incapaz de auditar ou compreender como a
+            máquina filtrou a sua realidade.
           </div>
         </div>
       </div>
@@ -65,353 +101,6 @@
       </div>
     </div>
 
-    <script>
-      const timelineData = [
-        {
-          year: "1990",
-          title: "🌍 WorldWideWeb",
-          subtitle: "Tim Berners-Lee • NeXTSTEP",
-          desc: "Primeiro navegador e editor visual da história. Chamado inicialmente de 'WorldWideWeb', depois renomeado para 'Nexus' para evitar confusão com a própria web. Rodava no sistema NeXTSTEP (da NeXT, empresa de Steve Jobs) e permitia criar e editar páginas, embora não exibisse imagens inline. O primeiro servidor web também funcionava nesse ambiente.",
-          icon: "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/NeXTSTEP_logo.svg/1280px-NeXTSTEP_logo.svg.png",
-          popupImg: "/imgs/1990_WorldWideWeb.jpg",
-          popupFact:
-            "Desenvolvido no CERN em 1990. O computador utilizado foi um NeXTcube com sistema NeXTSTEP, cuja arquitetura orientada a objetos influenciou macOS e iOS. O nome 'Nexus' foi usado para evitar ambiguidade com a World Wide Web.",
-        },
-        {
-          year: "1993",
-          title: "🖼️ NCSA Mosaic",
-          subtitle: "Marc Andreessen • Eric Bina",
-          desc: "Primeiro navegador gráfico popular com suporte a imagens inline, lançado em 1993 pelo National Center for Supercomputing Applications (NCSA). Democratizou a web ao tornar a navegação visual e intuitiva. Foi o precursor direto do Netscape Navigator.",
-          icon: "https://images.seeklogo.com/logo-png/24/1/ncsa-mosaic-logo-png_seeklogo-247287.png",
-          popupImg: "/imgs/1993_Mosaic.jpg",
-          popupFact:
-            "Criado por Marc Andreessen e Eric Bina. Sua interface com imagens e texto lado a lado foi revolucionária. O Mosaic não era comercial, mas inspirou a criação do Netscape, que dominou a web nos anos 1990.",
-        },
-        {
-          year: "1994",
-          title: "⚡ Netscape Navigator",
-          subtitle: "Netscape Communications",
-          desc: "Lançado em 1994 pela Netscape Communications, foi o navegador dominante nos anos 1990, chegando a mais de 80% do mercado. Introduziu tecnologias fundamentais como cookies, frames e, em 1995, a linguagem JavaScript.",
-          icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Netscape_icon_2007.svg/960px-Netscape_icon_2007.svg.png",
-          popupImg:
-            "/imgs/1994_Netscape.jpg",
-          popupFact:
-            "Fundado por Marc Andreessen (criador do Mosaic) e Jim Clark. Seu IPO em 1995 foi um marco da bolha da internet. O Netscape Navigator chegou a valer US$ 2,9 bilhões antes de sucumbir ao Internet Explorer da Microsoft.",
-        },
-        {
-          year: "1995",
-          title: "🪟 Internet Explorer 1.0",
-          subtitle: "Microsoft • Windows 95 Plus!",
-          desc: "Lançado em agosto de 1995 como parte do pacote Windows 95 Plus!, foi a resposta da Microsoft à Netscape. Baseado no código licenciado do Spyglass Mosaic, iniciou a estratégia de empacotamento com o sistema operacional que levaria ao domínio do mercado nos anos seguintes.",
-          icon: "https://upload.wikimedia.org/wikipedia/pt/e/e1/Logo_Internet_Explorer_1-pt.PNG?_=20101017225809",
-          popupImg:
-            "/imgs/1995_IE1.png",
-          popupFact:
-            "O Internet Explorer 1.0 não era gratuito inicialmente – fazia parte do pacote pago Windows 95 Plus!. A versão 1.5 foi lançada para Windows NT e suportava HTML tables, algo inovador na época. A guerra dos navegadores que se seguiu mudaria para sempre a indústria da web.",
-        },
-        {
-          year: "1996",
-          title: "🎭 Opera",
-          subtitle: "Opera Software",
-          desc: "Lançado em 1996 pela Opera Software (versão 2.1), foi pioneiro em recursos como abas, gestos de mouse e navegação por voz. Foco em pequeno tamanho e personalização, conquistando um nicho fiel de usuários.",
-          icon: "https://cdn.simpleicons.org/opera/2c7cb6",
-          popupImg:
-            "/imgs/1996_Opera.jpg",
-          popupFact:
-            "O Opera surgiu como um projeto de pesquisa da Telenor (empresa norueguesa de telecomunicações). Em 1995, a versão 1.0 foi lançada, mas foi a partir de 1996 que ganhou destaque com abas, que depois se tornaram padrão em todos os navegadores.",
-        },
-        {
-          year: "2001",
-          title: "📀 Internet Explorer 6",
-          subtitle: "Windows XP • 95% de mercado",
-          desc: "Apogeu e símbolo de estagnação. Falta de segurança e suporte precário a padrões.",
-          icon: "https://cdn.simpleicons.org/internetexplorer/2c7cb6",
-          popupImg:
-            "/imgs/2001_IE6.jpg",
-          popupFact:
-            "IE 6 foi um dos navegadores mais odiados por desenvolvedores, mas durou mais de 10 anos no mercado corporativo.",
-        },
-        {
-          year: "2002",
-          title: "🦊 Phoenix 0.1 (futuro Firefox)",
-          subtitle: "Mozilla Foundation",
-          desc: "Projeto leve e independente que nasceu das cinzas do Netscape.",
-          icon: "https://cdn.simpleicons.org/firefox/2c7cb6",
-          popupImg:"/imgs/2002_Phoenix.jpg",
-          popupFact:
-            "Phoenix foi renomeado para Firefox devido a conflitos de marca. O nome 'Firebird' também foi usado brevemente.",
-        },
-        {
-          year: "2003",
-          title: "🍏 Safari",
-          subtitle: "Apple • WebKit",
-          desc: "Navegador nativo do Mac, baseado no KHTML. Criou o motor WebKit que dominaria os dispositivos móveis.",
-          icon: "https://cdn.simpleicons.org/safari/2c7cb6",
-          popupImg:
-            "/imgs/2003_Safari.jpg",
-          popupFact:
-            "O WebKit do Safari se tornou a base do Chrome, e hoje é o motor por trás de bilhões de dispositivos.",
-        },
-        {
-          year: "2004",
-          title: "🔥 Firefox 1.0",
-          subtitle: "Mozilla",
-          desc: "Renascimento da web aberta. Conquistou dezenas de milhões em meses, quebrou o monopólio do IE.",
-          icon: "https://cdn.simpleicons.org/firefox/2c7cb6",
-          popupImg:
-            "/imgs/2004_Firefox1.jpg",
-          popupFact:
-            "O Firefox 1.0 foi baixado mais de 8 milhões de vezes nos primeiros 4 meses.",
-        },
-        {
-          year: "2008",
-          title: "⚡ Google Chrome",
-          subtitle: "Motor V8 • Isolamento de abas",
-          desc: "Revolução em velocidade, simplicidade e segurança.",
-          icon: "https://cdn.simpleicons.org/googlechrome/2c7cb6",
-          popupImg:
-            "/imgs/2008_Chrome.png",
-          popupFact:
-            "O Chrome foi lançado com um manifesto em quadrinhos por Scott McCloud, explicando suas inovações.",
-        },
-        {
-          year: "2010",
-          title: "📦 Chrome Web Store",
-          subtitle: "Apps e extensões",
-          desc: "Ecossistema que transformou o navegador em um sistema operacional para aplicações web.",
-          icon: "https://cdn.simpleicons.org/googlechrome/2c7cb6",
-          popupImg:
-            "/imgs/2010_ChromeWebStore.png",
-          popupFact:
-            "A Chrome Web Store foi lançada com centenas de apps e extensões, antecipando o modelo PWA.",
-        },
-        {
-          year: "2015",
-          title: "📌 Microsoft Edge (EdgeHTML)",
-          subtitle: "Windows 10",
-          desc: "Sucessor do IE, com motor moderno. Apesar de avanços, logo foi substituído pela migração ao Chromium.",
-          icon: "https://cdn.simpleicons.org/microsoftedge/2c7cb6",
-          popupImg:
-            "/imgs/2015_Edge.jpg",
-          popupFact:
-            "O EdgeHTML foi um motor promissor, mas a fragmentação web levou a Microsoft a adotar Chromium em 2018.",
-        },
-        {
-          year: "2015",
-          title: "📊 Chrome ultrapassa 50% do mercado",
-          subtitle: "Domínio consolidado",
-          desc: "Google Chrome se torna o navegador mais usado do mundo.",
-          icon: "https://cdn.simpleicons.org/googlechrome/2c7cb6",
-          popupImg: "https://cdn.simpleicons.org/googlechrome/2c7cb6",
-          popupFact:
-            "Desde 2015, o Chrome mantém a liderança com mais de 60% do mercado global.",
-        },
-        {
-          year: "2016",
-          title: "🚀 Firefox Quantum",
-          subtitle: "Motor Servo / Gecko",
-          desc: "Reforma radical: dobra de velocidade, nova interface e forte apelo à privacidade.",
-          icon: "https://cdn.simpleicons.org/firefox/2c7cb6",
-          popupImg:
-            "/imgs/2016_FirefoxQuantum.png",
-          popupFact:
-            "Quantum foi a maior atualização do Firefox em 13 anos, com partes escritas em Rust.",
-        },
-        {
-          year: "2018",
-          title: "🔄 Microsoft adota Chromium",
-          subtitle: "Fim do motor próprio",
-          desc: "Anúncio histórico: Edge migrará para o projeto Chromium, unificando a web.",
-          icon: "https://cdn.simpleicons.org/microsoftedge/2c7cb6",
-          popupImg:
-            "https://upload.wikimedia.org/wikipedia/en/e/e9/Microsoft_Edge_Chromium_logo.png",
-          popupFact:
-            "O novo Edge foi lançado em 2020 e hoje é o segundo navegador mais usado no desktop.",
-        },
-        {
-          year: "2020",
-          title: "🆕 Edge Chromium & Firefox privacidade",
-          subtitle: "Lançamento multiplataforma",
-          desc: "Edge baseado em Chromium; Firefox reforça Enhanced Tracking Protection.",
-          icon: "https://cdn.simpleicons.org/microsoftedge/2c7cb6",
-          popupImg: "/imgs/2020_EdgeChromium.jpg",
-          popupFact:
-            "Firefox introduziu o bloqueio de rastreadores por padrão, influenciando toda a indústria.",
-        },
-        {
-          year: "2021",
-          title: "🍃 Safari Intelligent Tracking Prevention",
-          subtitle: "Apple • Privacidade + Eficiência",
-          desc: "Safari reforça bloqueio de rastreamento e se destaca por economia de bateria.",
-          icon: "https://cdn.simpleicons.org/safari/2c7cb6",
-          popupImg: "https://cdn.simpleicons.org/safari/2c7cb6",
-          popupFact:
-            "Safari foi pioneiro em limitar o fingerprinting e cookies de terceiros, anos antes do movimento geral.",
-        },
-        {
-          year: "2023",
-          title: "🤖 IA integrada nos navegadores",
-          subtitle: "Copilot (Edge) • Gemini (Chrome)",
-          desc: "Microsoft Edge integra Bing Chat/Copilot. Google Chrome anuncia Gemini e resumos com IA.",
-          icon: "https://cdn.simpleicons.org/microsoftbing/2c7cb6",
-          popupImg: "/imgs/2023_EdgeCopilot.png",
-          popupFact:
-            "A integração de IA generativa nos navegadores marca a nova era de assistentes de navegação.",
-        },
-        {
-          year: "2024",
-          title: "🌀 Arc Browser",
-          subtitle: "The Browser Company",
-          desc: "Interface radical, comandos, organização com IA e gerenciamento de abas inovador.",
-          icon: "https://cdn.simpleicons.org/arc/2c7cb6",
-          popupImg: "/imgs/2024_ArcBrowser.png",
-          popupFact:
-            "Arc reinventa a navegação com espaços divididos e uma barra de comandos estilo Spotlight.",
-        },
-        {
-          year: "2025→2026",
-          title: "🧠 IA generativa nativa & modelos locais",
-          subtitle: "On‑device AI • Privacidade",
-          desc: "Chrome, Edge, Firefox e Safari integram pequenos modelos de linguagem rodando localmente.",
-          icon: "https://cdn.simpleicons.org/huggingface/2c7cb6",
-          popupImg: "/imgs/2025_2026_AI_Trends.jpg",
-          popupFact:
-            "Modelos locais como Gemini Nano e Phi-3 permitem resumos e traduções sem enviar dados para a nuvem.",
-        },
-      ];
-
-      const timelineContainer = document.getElementById("timeline");
-
-      function buildTimeline() {
-        timelineContainer.innerHTML = "";
-        timelineData.forEach((item) => {
-          const timelineItem = document.createElement("div");
-          timelineItem.className = "timeline-item";
-
-          const markerDiv = document.createElement("div");
-          markerDiv.className = "timeline-marker";
-          const yearCircle = document.createElement("div");
-          yearCircle.className = "year-circle";
-          yearCircle.innerText = item.year;
-          markerDiv.appendChild(yearCircle);
-
-          const cardDiv = document.createElement("div");
-          cardDiv.className = "card";
-
-          const cardHeader = document.createElement("div");
-          cardHeader.className = "card-header";
-
-          const cardTitleDiv = document.createElement("div");
-          cardTitleDiv.className = "card-title";
-          const titleH3 = document.createElement("h3");
-          titleH3.innerText = item.title;
-          cardTitleDiv.appendChild(titleH3);
-
-          const cardImgDiv = document.createElement("div");
-          cardImgDiv.className = "card-img";
-          const img = document.createElement("img");
-          img.src = item.icon;
-          img.alt = item.title;
-          img.onerror = () => {
-            img.src =
-              'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%232c7cb6" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/%3E%3C/svg%3E';
-          };
-          cardImgDiv.appendChild(img);
-
-          // Armazenar dados do pop-up
-          cardImgDiv.setAttribute("data-popup-img", item.popupImg);
-          cardImgDiv.setAttribute(
-            "data-popup-title",
-            item.title
-              .replace(/[🌍🖼️⚡🪟🎭📀🦊🍏🔥📦📌📊🚀🔄🆕🍃🤖🌀🧠]/g, "")
-              .trim(),
-          );
-          cardImgDiv.setAttribute("data-popup-fact", item.popupFact);
-
-          cardHeader.appendChild(cardTitleDiv);
-          cardHeader.appendChild(cardImgDiv);
-
-          const cardSub = document.createElement("div");
-          cardSub.className = "card-sub";
-          cardSub.innerText = item.subtitle;
-
-          const descP = document.createElement("p");
-          descP.innerText = item.desc;
-
-          cardDiv.appendChild(cardHeader);
-          cardDiv.appendChild(cardSub);
-          cardDiv.appendChild(descP);
-
-          // Bloco extra para impressão
-          const printExtra = document.createElement("div");
-          printExtra.className = "print-extra";
-          printExtra.innerHTML = `
-        <div class="print-image">
-          <img src="${item.popupImg}" alt="Imagem de ${item.title.replace(/[^a-zA-Z0-9]/g, " ")}" style="max-width: 100%; max-height: 200px;">
-        </div>
-        <div class="print-fact">
-          <strong>📌 Curiosidade:</strong> ${item.popupFact}
-        </div>
-      `;
-          cardDiv.appendChild(printExtra);
-
-          timelineItem.appendChild(markerDiv);
-          timelineItem.appendChild(cardDiv);
-          timelineContainer.appendChild(timelineItem);
-        });
-      }
-
-      buildTimeline();
-
-      // Sistema de pop-up flutuante
-      let popupElement = null;
-
-      function createPopup() {
-        const popup = document.createElement("div");
-        popup.className = "img-popup";
-        popup.style.display = "none";
-        document.body.appendChild(popup);
-        return popup;
-      }
-
-      function showPopup(target, imgUrl, title, fact) {
-        if (!popupElement) popupElement = createPopup();
-
-        popupElement.innerHTML = `
-      <img src="${imgUrl}" alt="Imagem ilustrativa" onerror="this.src='https://cdn.simpleicons.org/internetarchive/cccccc'">
-      <div class="popup-title">📸 ${title}</div>
-      <div class="popup-desc">✨ ${fact}</div>
-    `;
-
-        const rect = target.getBoundingClientRect();
-        const popupWidth = 800;
-        let left = rect.right + 15;
-        let top = rect.top + rect.height / 2 - 100;
-
-        if (left + popupWidth > window.innerWidth) {
-          left = rect.left - popupWidth - 15;
-        }
-        if (top < 10) top = 10;
-        if (top + 400 > window.innerHeight) top = window.innerHeight - 410;
-
-        popupElement.style.left = `${left}px`;
-        popupElement.style.top = `${top}px`;
-        popupElement.style.display = "flex";
-      }
-
-      function hidePopup() {
-        if (popupElement) popupElement.style.display = "none";
-      }
-
-      document.querySelectorAll(".card-img").forEach((imgDiv) => {
-        imgDiv.addEventListener("mouseenter", () => {
-          const imgUrl = imgDiv.getAttribute("data-popup-img");
-          const title = imgDiv.getAttribute("data-popup-title");
-          const fact = imgDiv.getAttribute("data-popup-fact");
-          if (imgUrl && title && fact) showPopup(imgDiv, imgUrl, title, fact);
-        });
-        imgDiv.addEventListener("mouseleave", hidePopup);
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
