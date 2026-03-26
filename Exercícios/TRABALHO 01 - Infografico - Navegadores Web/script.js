@@ -403,17 +403,6 @@ document.querySelectorAll(".card-img").forEach((imgDiv) => {
   imgDiv.addEventListener("mouseleave", hidePopup);
 });
 
-// Injetar Bloco de Conclusão antes do Footer
-const trendsSection = document.querySelector(".trends");
-const conclusionHTML = `
-  <div class="conclusion-block fade-in-section">
-    <h2>Conclusão da Evolução da IHC</h2>
-    <p>A mudança que mais exigiu do utilizador ao longo destas três décadas foi a transição da web baseada em destinos (digitar URLs exatas) para a web baseada em intenção (buscas e comandos de IA). Visualmente, a interface tornou-se drasticamente mais simples — saindo de menus lotados de botões para quase nenhuma borda —, mas essa simplicidade é uma ilusão que apenas ocultou uma complexidade algorítmica gigantesca a correr em segundo plano. Com o passar do tempo, a interação ficou, de facto, mais intuitiva, deixando de exigir que o humano aprendesse a linguagem da máquina para forçar a máquina a entender as necessidades humanas.</p>
-  </div>
-`;
-trendsSection.insertAdjacentHTML("afterend", conclusionHTML);
-trendsSection.classList.add("fade-in-section");
-
 // Lógica do Intersection Observer para Animação de Scroll
 const observerOptions = {
   root: null,

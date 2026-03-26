@@ -411,9 +411,9 @@ body {
 
 .footer-note {
   text-align: center;
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  color: #5b7f99;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #1f3a4b;
   font-weight: 500;
 }
 
@@ -642,6 +642,50 @@ body {
 .visual-summary figcaption a:hover {
   color: #f4b942; /* Amarelo da UTFPR no hover */
   text-decoration: underline;
+}
+
+/* ==============================================
+   ESTÉTICA: Footer do GitHub
+   ============================================== */
+.github-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(44, 124, 182, 0.3); /* Linha sutil separando a nota do botão */
+}
+
+.github-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Tahoma, sans-serif;
+  font-size: 0.95rem;
+  color: #155a7e;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+  background: rgba(44, 124, 182, 0.08); /* Fundo azul bem claro */
+  transition: all 0.3s ease;
+}
+
+.github-footer a:hover {
+  background: #155a7e;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(21, 90, 126, 0.2);
+}
+
+.github-footer svg {
+  transition: stroke 0.3s ease;
+}
+
+/* Esconde o link na hora da impressão */
+@media print {
+  .github-footer {
+    display: none;
+  }
 }
 
 /* Ajuste para impressão */
