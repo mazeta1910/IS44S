@@ -188,7 +188,7 @@ export const desktopData = [
     desc: "Em dezembro de 2018, a Microsoft anunciou que abandonaria seu motor EdgeHTML para adotar o Chromium como base do novo Microsoft Edge. Foi o fim de uma era de motores proprietários e um marco na consolidação da web sob o código aberto do Google. A mudança permitiu que o Edge se tornasse multiplataforma (Windows, macOS, Linux), melhorasse a compatibilidade com sites e acelerasse o ritmo de atualizações. O novo Edge, lançado em 2020, conquistou espaço e hoje é o segundo navegador mais usado no desktop.",
     icon: "/imgs/icons/pc/2018_Chromium.png",
     popupImg:
-      "https://upload.wikimedia.org/wikipedia/en/e/e9/Microsoft_Edge_Chromium_logo.png",
+      "https://inthecloud247.com/wp-content/uploads/2019/12/Microsoft-Edge-Chromium-300x128.png",
     popupFact:
       "Sinalizou o domínio absoluto do ecossistema de renderização da Google.",
   },
