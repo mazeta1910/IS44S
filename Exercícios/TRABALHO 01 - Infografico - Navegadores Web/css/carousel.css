@@ -42,7 +42,11 @@
 /* --- Slide 1: Árvore --- */
 .visual-summary-style {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .visual-summary-style h3 {
   color: #155a7e;
   font-size: 1.8rem;
@@ -50,20 +54,40 @@
   font-family: Tahoma, sans-serif;
 }
 .visual-summary-style img {
+  display: block;
   max-width: 100%;
-  max-height: 650px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-height: 750px;
+  width: auto;
 }
-.visual-summary-style figcaption {
-  margin-top: 15px;
+
+.visual-summary-style figcaption,
+.ms-source {
+  margin-top: 20px;
   font-size: 0.9rem;
   color: #5b7f99;
 }
-.visual-summary-style figcaption a {
+
+.visual-summary-style figcaption a,
+.ms-source a {
   color: #2c7cb6;
   font-weight: bold;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.visual-summary-style figcaption a:hover,
+.ms-source a:hover {
+  color: #facc15;
+  text-decoration: underline;
+}
+
+.visual-summary-style .zoomable-img {
+  display: inline-block; 
+  position: relative;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(21, 90, 126, 0.1);
 }
 
 /* --- Slide 2 e 3: Market Share e Motores de Busca --- */
@@ -161,7 +185,7 @@
 .trend-card {
   background: linear-gradient(135deg, #155a7e, #0f2b3d);
   border-radius: 1rem;
-  padding: 2rem 1.8rem 1.5rem 1.8rem; /* Ajuste no padding inferior */
+  padding: 2rem 1.8rem 1.5rem 1.8rem;
   color: #eef4fa;
   border-top: 4px solid #facc15;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -282,6 +306,7 @@
 /* ==============================================
    AJUSTES LIGHTBOX NO CARROSSEL (Lupa de Zoom)
    ============================================== */
+
 .zoomable-img {
   position: relative;
   cursor: zoom-in;
@@ -327,54 +352,153 @@
   transform: translateY(0);
 }
 
+.print-article-content {
+  display: none;
+}
+
 /* ==============================================
-   IMPRESSÃO: "Desenrolando" o Carrossel
+   IMPRESSÃO: "Desenrolando" o Carrossel e Modais
    ============================================== */
+   
 @media print {
-  .carousel-container {
+  .carousel-container,
+  .carousel-track,
+  .carousel-slide,
+  .slide-content,
+  .trends-style {
+    display: block !important;
     overflow: visible !important;
     height: auto !important;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 1rem 0 !important;
-    max-width: 100% !important;
-  }
-  .carousel-track {
-    display: block !important;
+    max-height: none !important;
+    position: static !important;
     transform: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  .carousel-slide {
+  .trends-grid {
     display: block !important;
-    margin-bottom: 4rem;
-    page-break-inside: avoid;
+    margin-top: 1rem !important;
   }
-  .slide-content {
-    padding: 1rem 0;
-  }
-  .carousel-btn,
-  .carousel-dots,
-  .zoom-icon {
-    display: none !important;
-  }
-  .zoomable-img {
-    cursor: default !important;
-  }
+
   .trend-card {
+    display: block !important;
+    page-break-inside: avoid !important; 
+    break-inside: avoid !important;
+    margin-bottom: 2.5rem !important;
     background: #f4f8fb !important;
     color: #1f3a4b !important;
     border: 1px solid #155a7e !important;
     border-top: 4px solid #155a7e !important;
     box-shadow: none !important;
+    padding: 1.5rem !important;
   }
+
   .trend-card strong {
     color: #155a7e !important;
+    text-align: left !important;
   }
+
+  .trend-text {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .read-more,
+  .carousel-btn,
+  .carousel-dots,
+  .zoom-hint {
+    display: none !important;
+  }
+
+  .print-article-content {
+    display: block !important;
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    border-top: 2px dashed #90a9c2 !important;
+  }
+
+  .print-evidence strong {
+    display: block !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .print-evidence p {
+    font-size: 1rem !important;
+    color: #334155 !important;
+    text-align: justify !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .print-link {
+    font-size: 0.9rem !important;
+    color: #155a7e !important;
+    word-break: break-all !important; 
+  }
+}
+
+/* --- Etiqueta de Zoom --- */
+.zoomable-img {
+  position: relative;
+  cursor: zoom-in;
+  display: inline-block; 
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(21, 90, 126, 0.1);
+  transition: border-color 0.3s;
+  max-width: 100%; 
+}
+
+.zoomable-img:hover {
+  border-color: #facc15;
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 43, 61, 0.92);
+  color: #facc15;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 20;
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.zoomable-img:hover .zoom-hint {
+  background: #facc15;
+  color: #0f2b3d;
+  transform: translateX(-50%) scale(1.08); 
+  border-color: #ffffff;
+}
+
+@media print {
+  .zoom-hint { display: none !important; }
 }
 
 /* ==============================================
    IMPRESSÃO: "Desenrolando" o Carrossel
    ============================================== */
+
 @media print {
   .carousel-container { overflow: visible !important; height: auto !important; background: none !important; border: none !important; box-shadow: none !important; margin: 1rem 0 !important; max-width: 100% !important; }
   .carousel-track { display: block !important; transform: none !important; }
@@ -385,14 +509,12 @@
   .trend-card { background: #f4f8fb !important; color: #1f3a4b !important; border: 1px solid #155a7e !important; border-top: 4px solid #155a7e !important; box-shadow: none !important; display: block !important; }
   .trend-card strong { color: #155a7e !important; }
   
-  /* 🟢 MÁGICA 3: Remove as reticências e mostra o texto todo no PDF */
   .trend-text {
     display: block !important;
     -webkit-line-clamp: unset !important;
     overflow: visible !important;
   }
   
-  /* Esconde o botão "Ler mais" na impressão */
   .read-more {
     display: none !important;
   }

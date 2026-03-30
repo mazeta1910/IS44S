@@ -1,35 +1,39 @@
+import { headerData } from '../data.js';
+
 export function renderHeader(containerId, onSwitchTimeline) {
   const container = document.getElementById(containerId);
   if (!container) return;
   
+  // Gera os spans das badges dinamicamente
+  const badgesHTML = headerData.badges
+    .map(badge => `<span class="badge">${badge}</span>`)
+    .join('');
+
   container.innerHTML = `
     <header class="academic-header">
       <div class="header-content">
         <div class="university-brand">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/UTFPR_logo.svg" alt="Logo UTFPR" class="utfpr-logo-inverted" />
-          <p>Universidade Tecnológica Federal do Paraná - Campus Pato Branco</p>
+          <img src="${headerData.university.logoUrl}" alt="${headerData.university.logoAlt}" class="utfpr-logo-inverted" />
+          <p>${headerData.university.name}</p>
         </div>
         <div class="academic-details">
-          <p><strong>Disciplina:</strong> Interação Ser Humano-Computador</p>
-          <p><strong>Professora:</strong> Drª. Soelaine Rodrigues Ascari</p>
-          <p><strong>Acadêmicos:</strong> Matheus C. P. Santos & Tiago A. Sanguanini</p>
+          <p><strong>Disciplina:</strong> ${headerData.academicDetails.discipline}</p>
+          <p><strong>Professora:</strong> ${headerData.academicDetails.professor}</p>
+          <p><strong>Acadêmicos:</strong> ${headerData.academicDetails.students}</p>
         </div>
       </div>
     </header>
 
     <div class="header">
-      <h1 id="main-title">EVOLUÇÃO DOS NAVEGADORES WEB - PCs</h1>
-      <p>Do WorldWideWeb de 1990 aos navegadores com IA de 2026 — passe o mouse sobre os ícones para ver imagens e curiosidades.</p>
+      <h1 id="main-title">${headerData.title.desktop}</h1>
+      <p>${headerData.description}</p>
       <div class="badge-era">
-        <span class="badge">1990–1999: GÊNESE</span>
-        <span class="badge">2000–2009: GUERRA & RENOVAÇÃO</span>
-        <span class="badge">2010–2019: DOMÍNIO CHROME</span>
-        <span class="badge">2020–2026: PRIVACIDADE + IA</span>
+        ${badgesHTML}
       </div>
 
       <div class="timeline-controls fade-in-section">
-        <button id="btn-desktop" class="control-btn active">💻 Navegadores Desktop</button>
-        <button id="btn-mobile" class="control-btn">📱 Navegadores Mobile</button>
+        <button id="btn-desktop" class="control-btn active">${headerData.controls.desktopBtn}</button>
+        <button id="btn-mobile" class="control-btn">${headerData.controls.mobileBtn}</button>
       </div>
     </div>
   `;
@@ -48,11 +52,12 @@ export function updateHeaderState(type) {
   btnDesktop.classList.remove('active');
   btnMobile.classList.remove('active');
 
+  // 🟢 Usa os dados do objeto em vez de strings fixas ('hardcoded')
   if (type === 'mobile') {
-    mainTitle.innerText = "EVOLUÇÃO DOS NAVEGADORES WEB - MOBILE";
+    mainTitle.innerText = headerData.title.mobile;
     btnMobile.classList.add('active');
   } else {
-    mainTitle.innerText = "EVOLUÇÃO DOS NAVEGADORES WEB - PCs";
+    mainTitle.innerText = headerData.title.desktop;
     btnDesktop.classList.add('active');
   }
 }

@@ -7,7 +7,6 @@ import { renderFooter } from './components/footer.js';
 import { initLightbox } from './components/lightbox.js';
 import { initArticleModal } from './components/modal-articles.js';
 
-// Configuração do Observer para as animações de entrada (Fade-in)
 const observerOptions = {
   root: null,
   rootMargin: "0px",
@@ -23,34 +22,40 @@ const scrollObserver = new IntersectionObserver((entries, observer) => {
   });
 }, observerOptions);
 
-// Função para alternar entre as timelines Desktop e Mobile
 function handleSwitchTimeline(type) {
-  const timelineRoot = document.getElementById('timeline-root');
-  if (!timelineRoot) return;
-
+  const desktopRoot = document.getElementById('timeline-desktop-root');
+  const mobileRoot = document.getElementById('timeline-mobile-root');
+  const carouselRoot = document.getElementById('carousel-root'); // Seleciona o carrossel
+  
   updateHeaderState(type);
 
   if (type === 'mobile') {
-    renderTimeline('timeline-root', mobileData, scrollObserver);
+    desktopRoot.classList.remove('active-timeline');
+    mobileRoot.classList.add('active-timeline');
+    // Esconde o carrossel na aba mobile
+    if (carouselRoot) carouselRoot.classList.add('hide-on-screen'); 
   } else {
-    renderTimeline('timeline-root', desktopData, scrollObserver);
+    mobileRoot.classList.remove('active-timeline');
+    desktopRoot.classList.add('active-timeline');
+    // Mostra o carrossel na aba desktop
+    if (carouselRoot) carouselRoot.classList.remove('hide-on-screen');
   }
 }
 
-// Inicialização principal quando a página carrega
 document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initPopup();
-  initArticleModal(); // Inicializa o modal de artigos aqui
+  initArticleModal();
   
   renderHeader('header-root', handleSwitchTimeline);
   renderCarousel('carousel-root');
   renderFooter('footer-root');
   
-  // Renderiza a timeline inicial (Desktop)
+  renderTimeline('timeline-desktop-root', desktopData, scrollObserver);
+  renderTimeline('timeline-mobile-root', mobileData, scrollObserver);
+  
   handleSwitchTimeline('desktop');
 
-  // Aguarda um pouco para os elementos estarem no DOM e aplica o observer
   setTimeout(() => {
     document.querySelectorAll(".fade-in-section").forEach((el) => {
       scrollObserver.observe(el);

@@ -1,6 +1,7 @@
 /* ==============================================
    MODAL DE ARTIGOS
    ============================================== */
+   
 .article-modal-overlay {
   display: none;
   position: fixed;

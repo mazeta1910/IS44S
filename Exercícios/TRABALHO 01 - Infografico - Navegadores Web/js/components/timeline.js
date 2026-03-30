@@ -4,7 +4,6 @@ export function renderTimeline(containerId, data, observer) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  // Efeito de fade out
   container.style.opacity = 0;
   
   setTimeout(() => {
@@ -87,7 +86,6 @@ export function renderTimeline(containerId, data, observer) {
       container.appendChild(timelineItem);
     });
 
-    // Reassocia os popups e dispara a animação de scroll
     attachPopupEvents();
     
     container.style.transition = "opacity 0.4s ease";

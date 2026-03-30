@@ -60,7 +60,6 @@ export function attachPopupEvents() {
     imgDiv.replaceWith(imgDiv.cloneNode(true)); 
   });
 
-  // Re-seleciona e adiciona os eventos limpos
   document.querySelectorAll(".card-img").forEach((imgDiv) => {
     imgDiv.addEventListener("mouseenter", () => {
       const imgUrl = imgDiv.getAttribute("data-popup-img");

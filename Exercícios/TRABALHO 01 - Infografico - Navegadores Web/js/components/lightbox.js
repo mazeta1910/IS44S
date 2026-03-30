@@ -6,7 +6,6 @@ export function initLightbox() {
   lightboxElement.className = "lightbox-modal";
   lightboxElement.id = "lightbox-modal";
   
-  // Note que o botão de fechar saiu de dentro da content para ficar fixo na tela
   lightboxElement.innerHTML = `
     <button class="lightbox-close" id="lightbox-close" title="Fechar (Esc)">&times;</button>
     <div class="lightbox-content">
@@ -28,27 +27,26 @@ export function initLightbox() {
     if (e.key === "Escape") closeLightbox(); 
   });
 
-  // 🟢 A MÁGICA ACONTECE AQUI: Adicionar o Zoom Real
   imgEl.addEventListener("click", function(e) {
-    e.stopPropagation(); // Evita que clique na imagem feche o modal acidentalmente
-    this.classList.toggle("zoomed"); // Ativa/Desativa a classe do tamanho gigante
+    e.stopPropagation();
+    this.classList.toggle("zoomed");
   });
 }
 
 export function openLightbox(imgSrc, captionText) {
   const imgEl = document.getElementById("lightbox-img");
   imgEl.src = imgSrc;
-  imgEl.classList.remove("zoomed"); // Sempre abre as imagens no modo ajustado (pequeno)
+  imgEl.classList.remove("zoomed");
 
   document.getElementById("lightbox-caption").innerText = captionText;
   lightboxElement.classList.add("is-visible");
-  document.body.style.overflow = "hidden"; // Desliga o scroll da página de trás
+  document.body.style.overflow = "hidden";
 }
 
 export function closeLightbox() {
   if (lightboxElement) {
     lightboxElement.classList.remove("is-visible");
-    document.body.style.overflow = ""; // Devolve o scroll à página original
+    document.body.style.overflow = "";
   }
 }
 

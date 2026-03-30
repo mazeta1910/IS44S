@@ -1,6 +1,7 @@
 /* ==============================================
    RESET & CONFIGURAÇÕES GLOBAIS
    ============================================== */
+   
 * {
   margin: 0;
   padding: 0;
@@ -54,4 +55,31 @@ body {
 @media print {
   body { background: white; padding: 0; margin: 0; }
   .infographic-container { background: white; backdrop-filter: none; box-shadow: none; padding: 0.5rem; max-width: 100%; }
+}
+/* ==============================================
+   CONTROLO DE VISIBILIDADE (ECRÃ VS IMPRESSÃO)
+   ============================================== */
+
+/* 1. REGRAS EXCLUSIVAS PARA O ECRÃ (NAVEGAÇÃO NORMAL) */
+@media screen {
+  .timeline-section {
+    display: none !important; 
+  }
+  
+  .timeline-section.active-timeline {
+    display: flex !important; 
+  }
+
+  .hide-on-screen {
+    display: none !important;
+  }
+}
+
+/* 2. REGRAS EXCLUSIVAS PARA IMPRESSÃO (PDF) */
+@media print {
+  .timeline-section {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }

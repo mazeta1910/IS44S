@@ -1,6 +1,7 @@
 /* ==============================================
    RODAPÉ E CONCLUSÃO
    ============================================== */
+   
 .conclusion-block {
   margin-top: 3rem;
   background: linear-gradient(135deg, #155a7e 0%, #0f2b3d 100%);
@@ -14,7 +15,7 @@
 }
 
 .conclusion-block::before {
-  content: '“';
+  content: "“";
   position: absolute;
   top: -40px;
   left: 30px;
@@ -51,7 +52,7 @@
   text-align: center;
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: #ffffff;
+  color: #000000;
   font-weight: 500;
 }
 
@@ -85,8 +86,23 @@
   box-shadow: 0 8px 15px rgba(21, 90, 126, 0.2);
 }
 
-.github-footer svg { transition: stroke 0.3s ease; }
+.github-footer svg {
+  transition: stroke 0.3s ease;
+}
+
+/* ==============================================
+   IMPRESSÃO: Proteção da Conclusão (Rodapé)
+   ============================================== */
 
 @media print {
-  .github-footer { display: none; }
+  #footer-root,
+  .footer-container,
+  footer,
+  .footer-content {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: block !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+  }
 }
