@@ -1,4 +1,4 @@
-const timelineData = [
+export const desktopData = [
   {
     year: "1990",
     title: "WorldWideWeb (O Ponto Zero)",
@@ -195,7 +195,7 @@ const timelineData = [
     subtitle: "Copilot (Edge) • Gemini (Chrome)",
     desc: "A inteligência artificial deixou de ser apenas um conceito e se tornou funcionalidade nativa nos principais navegadores. O Microsoft Edge integrou o Copilot (antigo Bing Chat) diretamente na barra lateral, permitindo resumos de páginas, redação assistida e conversas contextuais. O Google Chrome anunciou o Gemini embutido, trazendo sugestões inteligentes, traduções aprimoradas e organização automática de abas. A tendência marcou o início da era dos assistentes de navegação com IA generativa, transformando o navegador em um agente proativo e personalizado.",
     icon: "/imgs/icons/2023_IA_Integrada.png",
-    popupImg: "/imgs/2023_EdgeCopilot.png",
+    popupImg: "/imgs/popups/2023_EdgeCopilot.png",
     popupFact:
       "A integração de IA generativa marca a transição para verdadeiros assistentes de navegação.",
   },
@@ -210,7 +210,7 @@ const timelineData = [
     barreiraRompida:
       "Rompe o paradigma de 'pesquisar, abrir links e ler'. A interação passa a ser baseada em intenção: o utilizador pede um resumo e a máquina faz o gerenciamento semântico do conteúdo.",
     icon: "/imgs/icons/2024_ArcBrowser.webp",
-    popupImg: "/imgs/2024_ArcBrowser.png",
+    popupImg: "/imgs/popups/2024_ArcBrowser.png",
     popupFact:
       "Arc reinventa a navegação abolindo a barra de abas superior tradicional e introduzindo espaços de trabalho fluidos.",
   },
@@ -220,207 +220,110 @@ const timelineData = [
     subtitle: "On‑device AI • Privacidade",
     desc: "A inteligência artificial migrou da nuvem para o dispositivo. Navegadores como Chrome, Edge, Firefox e Safari passaram a integrar pequenos modelos de linguagem (SLMs) rodando localmente – como Gemini Nano e Phi-3 –, permitindo resumos instantâneos de páginas, traduções em tempo real, preenchimento inteligente de formulários e até agentes de navegação personalizados, tudo sem enviar dados para servidores externos. Brave e DuckDuckGo também aderiram, reforçando a privacidade como pilar. A era dos navegadores como assistentes proativos e offline finalmente se consolidou, transformando a web em uma experiência mais ágil, segura e inteligente.",
     icon: "/imgs/icons/2025-2026_IA_Generativa.png",
-    popupImg: "/imgs/2025_2026_AI_Trends.jpg",
+    popupImg: "/imgs/popups/2025_2026_AI_Trends.jpg",
     popupFact:
       "Modelos locais permitem resumos e traduções sem enviar dados para a nuvem.",
   },
 ];
 
-const timelineContainer = document.getElementById("timeline");
-
-function buildTimeline() {
-  timelineContainer.innerHTML = "";
-  timelineData.forEach((item) => {
-    const timelineItem = document.createElement("div");
-    timelineItem.className = "timeline-item fade-in-section";
-
-    const markerDiv = document.createElement("div");
-    markerDiv.className = "timeline-marker";
-    const yearCircle = document.createElement("div");
-    yearCircle.className = "year-circle";
-    yearCircle.innerText = item.year;
-    markerDiv.appendChild(yearCircle);
-
-    const cardDiv = document.createElement("div");
-    cardDiv.className = "card";
-
-    const cardHeader = document.createElement("div");
-    cardHeader.className = "card-header";
-
-    const cardTitleDiv = document.createElement("div");
-    cardTitleDiv.className = "card-title";
-    const titleH3 = document.createElement("h3");
-    titleH3.innerText = item.title;
-    cardTitleDiv.appendChild(titleH3);
-
-    const cardImgDiv = document.createElement("div");
-    cardImgDiv.className = "card-img";
-    const img = document.createElement("img");
-    img.src = item.icon;
-    img.alt = item.title;
-    img.onerror = () => {
-      img.src =
-        'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%232c7cb6" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/%3E%3C/svg%3E';
-    };
-    cardImgDiv.appendChild(img);
-
-    cardImgDiv.setAttribute("data-popup-img", item.popupImg);
-    cardImgDiv.setAttribute(
-      "data-popup-title",
-      item.title
-        .replace(/[🌍🖼️⚡🪟🎭📀🦊🍏🔥📦📌📊🚀🔄🆕🍃🤖🌀🧠⚙️]/g, "")
-        .trim(),
-    );
-    cardImgDiv.setAttribute("data-popup-fact", item.popupFact);
-
-    cardHeader.appendChild(cardTitleDiv);
-    cardHeader.appendChild(cardImgDiv);
-
-    const cardSub = document.createElement("div");
-    cardSub.className = "card-sub";
-    cardSub.innerText = item.subtitle;
-
-    const descP = document.createElement("p");
-    descP.innerText = item.desc;
-
-    cardDiv.appendChild(cardHeader);
-    cardDiv.appendChild(cardSub);
-    cardDiv.appendChild(descP);
-
-    // Injeta a Análise de Interação se for um marco IHC
-    if (item.isMilestone) {
-      cardDiv.classList.add("highlight-card");
-
-      if (item.estiloInteracao && item.barreiraRompida) {
-        const analysisDiv = document.createElement("div");
-        analysisDiv.className = "interaction-analysis";
-        analysisDiv.innerHTML = `
-          <div class="analysis-item"><strong>Estilo de Interação:</strong> ${item.estiloInteracao}</div>
-          <div class="analysis-item"><strong>Barreira Rompida:</strong> ${item.barreiraRompida}</div>
-        `;
-        cardDiv.appendChild(analysisDiv);
-      }
-    }
-
-    // Bloco extra para impressão em PDF
-    const printExtra = document.createElement("div");
-    printExtra.className = "print-extra";
-    printExtra.innerHTML = `
-      <div class="print-image">
-        <img src="${item.popupImg}" alt="Imagem ilustrativa" style="max-width: 100%; max-height: 200px;">
-      </div>
-      <div class="print-fact">
-        <strong>Curiosidade:</strong> ${item.popupFact}
-      </div>
-    `;
-    cardDiv.appendChild(printExtra);
-
-    timelineItem.appendChild(markerDiv);
-    timelineItem.appendChild(cardDiv);
-    timelineContainer.appendChild(timelineItem);
-  });
-}
-
-buildTimeline();
-
-// Sistema de pop-up flutuante
-let popupElement = null;
-
-function createPopup() {
-  const popup = document.createElement("div");
-  popup.className = "img-popup";
-  popup.style.display = "none";
-  document.body.appendChild(popup);
-  return popup;
-}
-
-function showPopup(target, imgUrl, title, fact) {
-  if (!popupElement) {
-    popupElement = document.createElement("div");
-    popupElement.className = "img-popup";
-    document.body.appendChild(popupElement);
+export const mobileData = [
+  {
+    year: "1999",
+    title: "WAP (A Internet de Texto)",
+    subtitle: "Wireless Application Protocol",
+    desc: "A primeira tentativa de levar a web ao telemóvel. Interfaces monocromáticas, sem imagens e navegação limitada a botões físicos numéricos. O WAP não renderizava HTML, mas WML, criando um ecossistema isolado e extremamente limitado.",
+    isMilestone: true,
+    estiloInteracao: "Navegação por menus de texto e teclas físicas direcionais.",
+    barreiraRompida: "A internet deixou de estar presa a um cabo e a uma secretária, introduzindo o conceito de conectividade on-the-go.",
+    icon: "https://cdn.simpleicons.org/nokia/2c7cb6",
+    popupImg: "https://upload.wikimedia.org/wikipedia/commons/4/47/WAP_browser_on_Nokia_7110.jpg",
+    popupFact: "O WAP era tão lento e caro que ganhou a alcunha irónica de 'Wait And Pay' (Espere e Pague)."
+  },
+  {
+    year: "2005",
+    title: "Opera Mini",
+    subtitle: "A Magia da Compressão",
+    desc: "Lançado em 2005, o Opera Mini revolucionou a navegação móvel ao processar os sites nos servidores da Opera antes de os enviar para o telemóvel. Isso comprimia os dados em até 90%, permitindo que telemóveis básicos com ligações 2G acedessem à 'web real' e não apenas a páginas WAP capadas.",
+    icon: "https://cdn.simpleicons.org/opera/2c7cb6",
+    popupImg: "/imgs/popups/1996_Opera.jpg", 
+    popupFact: "O Opera Mini foi o responsável por democratizar o acesso à internet em países em desenvolvimento devido à extrema economia de dados."
+  },
+  {
+    year: "2007",
+    title: "Mobile Safari",
+    subtitle: "iPhone • O Big Bang do Mobile",
+    desc: "O lançamento do primeiro iPhone mudou o paradigma da IHC mobile. O Mobile Safari foi o primeiro a exibir a web 'como ela é no desktop', abandonando a ideia de 'sites para telemóveis'. Introduziu a interação multi-touch (como o pinch-to-zoom), substituindo o cursor pelo dedo humano.",
+    isMilestone: true,
+    estiloInteracao: "Toque direto (Multi-touch) e manipulação física da interface (Pinch-to-zoom).",
+    barreiraRompida: "Fim da abstração do cursor. O utilizador passou a tocar 'diretamente' na informação, abolindo a necessidade de stylus ou botões físicos.",
+    icon: "https://cdn.simpleicons.org/safari/2c7cb6",
+    popupImg: "/imgs/popups/2003_Safari.jpg",
+    popupFact: "Steve Jobs recusou-se a suportar Flash no Mobile Safari, o que forçou a web inteira a migrar para o padrão HTML5 nos anos seguintes."
+  },
+  {
+    year: "2012",
+    title: "Chrome para Android",
+    subtitle: "Sincronização & WebViews",
+    desc: "O Chrome chegou ao Android unificando a experiência entre o PC e o bolso (sincronização de abas, histórico e passwords). Mais importante, o seu motor (Blink/Chromium) passou a ser a base do 'Android WebView', permitindo que outras aplicações (como o Facebook ou Instagram) abrissem páginas web internamente sem precisar de abrir o navegador.",
+    icon: "https://cdn.simpleicons.org/googlechrome/2c7cb6",
+    popupImg: "/imgs/popups/2008_Chrome.png",
+    popupFact: "A introdução do WebView fez com que passássemos grande parte do tempo a navegar na web dentro de outras apps, sem usar o navegador principal."
+  },
+  {
+    year: "2024",
+    title: "Arc Search",
+    subtitle: "IA e Navegação de uma Mão",
+    desc: "Enquanto os navegadores mobile tradicionais apenas encolheram a interface do PC, o Arc Search repensou a IHC para telemóveis. Os controlos foram movidos para a base (ao alcance do polegar) e introduziu a função 'Browse for me': a IA lê dezenas de sites e cria uma página web personalizada com a resposta resumida, evitando que o utilizador tenha de abrir links.",
+    isMilestone: true,
+    estiloInteracao: "Agência delegada (Browse for me) e Ergonomia de polegar.",
+    barreiraRompida: "Rompe o ciclo de 'pesquisar, abrir links e aceitar cookies'. A IA atua como um concierge que navega por si e devolve apenas o resultado sintetizado.",
+    icon: "https://cdn.simpleicons.org/arc/2c7cb6",
+    popupImg: "/imgs/popups/2024_ArcBrowser.png",
+    popupFact: "Foi um dos primeiros navegadores a entender que, no telemóvel, o utilizador quer respostas imediatas e não uma lista infinita de links azuis."
   }
+];
 
-  popupElement.innerHTML = `
-    <img src="${imgUrl}" alt="Imagem ilustrativa" onerror="this.src='https://cdn.simpleicons.org/internetarchive/cccccc'">
-    <div class="popup-title">📸 ${title}</div>
-    <div class="popup-desc">✨ ${fact}</div>
-  `;
-
-  // Força o display para conseguir medir o tamanho real
-  popupElement.style.display = "flex";
-  popupElement.style.visibility = "hidden"; 
-
-  // Timeout para garantir que o navegador renderizou o conteúdo e sabe o tamanho
-  setTimeout(() => {
-    const rect = target.getBoundingClientRect();
-    const popupWidth = popupElement.offsetWidth;
-    const popupHeight = popupElement.offsetHeight;
-    const padding = 20;
-
-    // Posição baseada na janela (viewport) para facilitar o cálculo
-    let viewTop = rect.top; 
-    let viewLeft = rect.right + 15;
-
-    // AJUSTE HORIZONTAL: Se estourar a direita
-    if (viewLeft + popupWidth > window.innerWidth - padding) {
-      viewLeft = rect.left - popupWidth - 15;
-    }
-
-    // AJUSTE VERTICAL: Se o fundo do pop-up estourar o limite inferior da JANELA
-    if (viewTop + popupHeight > window.innerHeight - padding) {
-      // Empurra para cima o necessário para caber na tela
-      viewTop = window.innerHeight - popupHeight - padding;
-    }
-
-    // Se mesmo assim estourar o topo da janela
-    if (viewTop < padding) {
-      viewTop = padding;
-    }
-
-    // Agora convertemos a posição da "janela" para a posição da "página" (absolute)
-    popupElement.style.left = `${viewLeft + window.scrollX}px`;
-    popupElement.style.top = `${viewTop + window.scrollY}px`;
-    popupElement.style.visibility = "visible";
-    popupElement.style.opacity = "1";
-  }, 0);
-}
-
-function hidePopup() {
-  if (popupElement) {
-    popupElement.style.display = "none";
-    popupElement.style.opacity = "0";
+export const trendsArticles = [
+  {
+    id: 1,
+    title: "Web Generativa",
+    desc: "O navegador deixa de ser um leitor de código aberto e passa a gerar interfaces personalizadas em tempo real via IA. Você não navega mais pela estrutura da web; recebe apenas o que a máquina decidiu que você precisa ver.",
+    evidence: "O Google’s Project Ellmann e o Meta’s AI Roadmap 2030 já descrevem navegadores que sintetizam conteúdo dinamicamente. O World Economic Forum (2026) chama isso de “delegated cognition” – a terceirização do esforço mental para sistemas automatizados que operam diretamente sobre a linguagem, o principal meio do raciocínio humano.",
+    link: "https://www.weforum.org/stories/2026/03/ai-cognition-infrastructure-future-governance-decisions/"
+  },
+  {
+    id: 2,
+    title: "Interação por Delegação",
+    desc: "Comandos de voz e texto substituem a investigação ativa. Em vez de buscar, você delega. A máquina escolhe por você. O ato de “procurar” se torna obsoleto — e com ele, a autonomia sobre o próprio caminho.",
+    evidence: "O paper “The Agentic Economy” (David M. Rothschild et. al, 2025) documenta que Microsoft (AutoGen), Anthropic (Model Context Protocol) e Google (Agent2Agent Protocol) já estão criando protocolos para que agentes de IA realizem ações em nome do usuário com o mínimo de orientação. O objetivo declarado: “drastically reduce the communication frictions between consumers and businesses”.",
+    link: "https://arxiv.org/pdf/2505.15799"
+  },
+  {
+    id: 3,
+    title: "Perfilamento On-Device",
+    desc: "O rastreamento migra para dentro do seu dispositivo, sob a promessa de segurança. Mas agora ele coleta dados íntimos: ritmo de digitação, tempo de retenção ocular, até suas hesitações. O hardware vira uma câmera invisível apontada para você.",
+    evidence: "Apple Intelligence e Gemini Nano (Google) são os projetos mais avançados de IA on-device. A promessa de privacidade local esconde o que o paper “Techno-Feudalism and AGI” (Pascal Stiefenhofer, 2025) chama de “enclosure of cognitive infrastructure” – o confinamento do usuário em um ecossistema que o conhece melhor do que ele mesmo, sem que ele possa auditar ou escapar.",
+    link: "https://arxiv.org/pdf/2503.14283"
+  },
+  {
+    id: 4,
+    title: "Apriosionamento",
+    desc: "Navegadores se consolidam como minissistemas operacionais exclusivos. Migrar de ecossistema se torna complexo, caro e deliberadamente frustrante. A porta de saída desaparece.",
+    evidence: "O artigo da Governing AI Agents (Noam Kolt, 2024) analisa a quebra do framework principal-agente: agentes de IA que operam dentro de jardins murados (Meta, Google, Amazon) não seguem os interesses do usuário, mas os interesses de quem os programou. O resultado é o “techno-feudalism” descrito por Pascal Stiefenhofer: a concentração da infraestrutura cognitiva nas mãos de poucos, onde o usuário não é mais consumidor, mas súdito.",
+    link: "papers.ssrn.com/sol3/papers.cfm?abstract_id=4772956"
+  },
+  {
+    id: 5,
+    title: "A Ilusão da Simplicidade",
+    desc: "A interface se reduz a um prompt vazio. Tudo parece simples, mas por trás há uma infraestrutura algorítmica inauditável. Quanto mais fácil de usar, mais impossível de questionar.",
+    evidence: "Jeffrey Reid (2023), em “AI as Ideology”, interpreta a IA como uma ilusão: um discurso que oculta as reais condições de produção. Os algoritmos de IA são “enactments of surplus value generating capital as data”. A simplicidade da interface é a cortina de fumaça que esconde a centralização real do poder.",
+    link: "https://philpapers.org/archive/REIAAI-7.pdf"
+  },
+  {
+    id: 6,
+    title: "Monopólio da Intenção",
+    desc: "A barra de endereços some. A navegação se torna 100% preditiva, comandada por uma IA centralizada. Você não digita para onde ir; você diz o que quer — e o algoritmo decide o caminho. O monopólio da intenção está completo.",
+    evidence: "O paper “The Problematic of Artificial Intelligence (AI) in Cognitive Capitalism: Toward Posthumanist Contours of the New Cognitariat” (Denis Petrina, CEU, 2025) mostra que o objeto da extração de valor não é mais apenas o trabalho manual, mas a cognição, a linguagem e a intenção. A morte da URL é o símbolo máximo: você não escolhe mais a fonte; a IA escolhe por você, e quem controla a IA controla a sua intenção. O World Economic Forum chama essa camada de “delegated cognition” e estima que o setor movimentará US$ 1,3 trilhão até 2032 com essa lógica.",
+    link: "https://journals.ehu.lt/index.php/topos/article/view/1484/1193"
   }
-}
-
-document.querySelectorAll(".card-img").forEach((imgDiv) => {
-  imgDiv.addEventListener("mouseenter", () => {
-    const imgUrl = imgDiv.getAttribute("data-popup-img");
-    const title = imgDiv.getAttribute("data-popup-title");
-    const fact = imgDiv.getAttribute("data-popup-fact");
-    if (imgUrl && title && fact) showPopup(imgDiv, imgUrl, title, fact);
-  });
-  imgDiv.addEventListener("mouseleave", hidePopup);
-});
-
-// Lógica do Intersection Observer para Animação de Scroll
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.15,
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-setTimeout(() => {
-  document.querySelectorAll(".fade-in-section").forEach((el) => {
-    observer.observe(el);
-  });
-}, 100);
+];

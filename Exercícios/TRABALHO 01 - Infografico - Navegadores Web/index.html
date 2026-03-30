@@ -7,158 +7,32 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <title>Infográfico: Evolução dos Navegadores Web</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/modal-articles.css" />
   </head>
   <body>
-    <header class="academic-header">
-      <div class="header-content">
-        <div class="university-brand">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/06/UTFPR_logo.svg"
-            alt="Logo UTFPR"
-            class="utfpr-logo-inverted"
-          />
-          <p>Universidade Tecnológica Federal do Paraná - Campus Pato Branco</p>
-        </div>
-
-        <div class="academic-details">
-          <p><strong>Disciplina:</strong> Interação Ser Humano-Computador</p>
-          <p><strong>Professora:</strong> Drª. Soelaine Rodrigues Ascari</p>
-          <p>
-            <strong>Acadêmicos:</strong> Matheus C. P. Santos & Tiago A.
-            Sanguanini
-          </p>
-        </div>
-      </div>
-    </header>
+    <div id="header-root"></div>
 
     <div class="infographic-container">
-      <div class="header">
-        <h1>EVOLUÇÃO DOS NAVEGADORES WEB - PCs</h1>
-        <p>
-          Do WorldWideWeb de 1990 aos navegadores com IA de 2026 — passe o mouse
-          sobre os ícones para ver imagens e curiosidades.
-        </p>
-        <div class="badge-era">
-          <span class="badge">1990–1999: GÊNESE</span>
-          <span class="badge">2000–2009: GUERRA & RENOVAÇÃO</span>
-          <span class="badge">2010–2019: DOMÍNIO CHROME</span>
-          <span class="badge">2020–2026: PRIVACIDADE + IA</span>
-        </div>
-      </div>
-
-      <div class="timeline" id="timeline"></div>
-
-      <div class="footer-note">
-        🖱️ Passe o mouse sobre os ícones dos navegadores para ver uma imagem
-        ampliada e uma curiosidade! Ao imprimir/salvar PDF, todas as imagens e
-        fatos aparecerão automaticamente.
-      </div>
-      <div class="visual-summary fade-in-section">
-        <h3>Árvore Genealógica dos Motores de Navegação</h3>
-        <figure>
-          <img
-            src="imgs/graphics/arvore_navegadores.jpg"
-            alt="Gráfico da evolução dos motores de navegação"
-          />
-          <figcaption>
-            Fonte:
-            <a
-              href="http://www.reviversoft.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >ReviverSoft (2011)</a
-            >
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="trends fade-in-section">
-        <h2>VISÃO DE FUTURO (2036) • A ERA DA DELEGAÇÃO</h2>
-        <div class="trends-grid">
-          <div class="trend-card">
-            <strong>A Web Generativa</strong><br />Em 10 anos, o navegador
-            deixará de ser um mero leitor de HTML para se tornar um sintetizador
-            de interfaces. Em vez de o usuário abrir múltiplas abas para
-            pesquisar algo, o motor de IA compilará as fontes e renderizará uma
-            página única, personalizada e dinâmica em tempo real. A internet
-            original estrutural ficará escondida nos bastidores.
-          </div>
-          <div class="trend-card">
-            <strong>Interação por Delegação</strong><br />O "apontar e clicar"
-            cederá espaço ao "comando". A comodidade de ter assistentes nativos
-            resolvendo tarefas complexas terceirizará a análise crítica. Ao
-            delegar a pesquisa e a leitura à máquina, o usuário perderá o
-            processo ativo de investigação, limitando-se aos vieses e às
-            respostas prontas do algoritmo.
-          </div>
-          <div class="trend-card">
-            <strong>O Perfilamento On-Device</strong><br />Sob a promessa de
-            "privacidade" rodando modelos locais, o rastreamento ficará mais
-            íntimo. O navegador aprenderá o seu ritmo de digitação, padrões de
-            clique e o tempo exato de retenção em cada parágrafo, criando um
-            perfil comportamental altamente preciso para rentabilizar a sua
-            "produtividade".
-          </div>
-          <div class="trend-card">
-            <strong>Aprisionamento Tecnológico</strong><br />A ideia do
-            navegador como uma "janela neutra" para a web desaparecerá. Eles se
-            consolidarão como minissistemas operacionais fechados. Com o fluxo
-            de trabalho, documentos e assistentes de IA amarrados a um único
-            motor, migrar de navegador em 2036 será tão complexo quanto trocar
-            de sistema operacional hoje.
-          </div>
-          <div class="trend-card">
-            <strong>A Ilusão da Simplicidade Absoluta</strong><br />A interface
-            visual será absurdamente minimalista — talvez apenas uma barra
-            flutuante ou um prompt central. No entanto, ao ocultar toda a
-            infraestrutura da internet sob essa camada automatizada, o design
-            tornará o usuário comum incapaz de auditar ou compreender como a
-            máquina filtrou a sua realidade.
-          </div>
-        </div>
-      </div>
-
-      <div class="conclusion-block fade-in-section">
-        <h2>Conclusão da Evolução da IHC</h2>
-        <p>
-          A mudança que mais exigiu do utilizador ao longo destas três décadas
-          foi a transição da web baseada em destinos (digitar URLs exatas) para
-          a web baseada em intenção (buscas e comandos de IA). Visualmente, a
-          interface tornou-se drasticamente mais simples — saindo de menus
-          lotados de botões para quase nenhuma borda —, mas essa simplicidade é
-          uma ilusão que apenas ocultou uma complexidade algorítmica gigantesca
-          a correr em segundo plano. Com o passar do tempo, a interação ficou,
-          de facto, mais intuitiva, deixando de exigir que o humano aprendesse a
-          linguagem da máquina para forçar a máquina a entender as necessidades
-          humanas.
-        </p>
-      </div>
-      <div class="github-footer">
-        <a
-          href="https://github.com/mazeta1910/IS44S/tree/main/Exercícios/TRABALHO%2001%20-%20Infografico%20-%20Navegadores%20Web"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            stroke="currentColor"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="github-icon"
-          >
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-            ></path>
-          </svg>
-          Código-fonte disponível no GitHub
-        </a>
-      </div>
+      <div id="controls-root"></div>
+      <div id="timeline-root" class="timeline"></div>
+      <div id="carousel-root"></div>
+      <div id="footer-root"></div>
     </div>
-    <script src="script.js"></script>
+
+    <div id="popup-root"></div>
+    <div id="lightbox-root"></div>
+    <div id="article-modal-root"></div>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

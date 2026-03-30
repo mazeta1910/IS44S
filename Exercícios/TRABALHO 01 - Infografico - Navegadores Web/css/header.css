@@ -1,0 +1,155 @@
+/* ==============================================
+   CABEÇALHO & BOTÕES DE CONTROLE
+   ============================================== */
+.academic-header {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #facc15;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  color: #f1f5f9;
+  font-family: Tahoma, sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.university-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.university-brand p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 200px;
+  line-height: 1.2;
+}
+.utfpr-logo-inverted {
+  height: 65px;
+  width: auto;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+.utfpr-logo-inverted:hover {
+  transform: scale(1.02);
+}
+
+.academic-details p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  text-align: right;
+  color: #cbd5e1;
+}
+.academic-details p strong {
+  color: #facc15;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 2px dashed #90a9c2;
+  padding-bottom: 1.5rem;
+}
+.header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0f2b3d, #1f6392);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #facc15;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  /* Trocamos o azul escuro do subtítulo por um cinza-azulado bem claro */
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.badge-era {
+  display: inline-flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.badge {
+  font-size: 0.75rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+  font-weight: 600;
+  color: #1f5e7e;
+  border: 1px solid #bcd0e3;
+}
+
+/* Botões SPA */
+.timeline-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.control-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #2c7cb6;
+  color: #2c7cb6;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.control-btn:hover {
+  background: rgba(44, 124, 182, 0.1);
+  transform: translateY(-2px);
+}
+.control-btn.active {
+  background: linear-gradient(135deg, #2c7cb6, #155a7e);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(44, 124, 182, 0.4);
+}
+
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .university-brand {
+    align-items: center;
+  }
+  .academic-details p {
+    text-align: center;
+  }
+}
+@media (max-width: 680px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}

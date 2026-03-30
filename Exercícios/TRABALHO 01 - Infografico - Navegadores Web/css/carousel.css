@@ -1,0 +1,399 @@
+/* ==============================================
+   CARROSSEL (PASSADO, PRESENTE E FUTURO)
+   ============================================== */
+.carousel-container {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+  margin: 3rem auto;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff, #f4f8fb);
+  border: 1px solid rgba(44, 124, 182, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  align-items: stretch;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-content {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem 4rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Slide 1: Árvore --- */
+.visual-summary-style {
+  text-align: center;
+}
+.visual-summary-style h3 {
+  color: #155a7e;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-family: Tahoma, sans-serif;
+}
+.visual-summary-style img {
+  max-width: 100%;
+  max-height: 650px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.visual-summary-style figcaption {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #5b7f99;
+}
+.visual-summary-style figcaption a {
+  color: #2c7cb6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* --- Slide 2 e 3: Market Share e Motores de Busca --- */
+.market-share-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.ms-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 650px;
+}
+
+.ms-text h4 {
+  color: #155a7e;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-family: Tahoma, sans-serif;
+  line-height: 1.3;
+}
+
+.ms-text p {
+  color: #1f3a4b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  font-size: 1.25rem;
+}
+
+.ms-text ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1f3a4b;
+}
+
+.ms-text li {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.ms-text li strong {
+  color: #facc15;
+  background: #0f2b3d;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.ms-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 650px;
+}
+
+.ms-image img {
+  max-width: 100%;
+  max-height: 550px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+.search-engine-img img {
+  background: #003366;
+  padding: 15px;
+  width: 100%;
+}
+
+/* --- Slide 4: Visão de Futuro --- */
+.trends-style {
+  text-align: center;
+}
+.trends-style h3 {
+  color: #155a7e;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-family: Tahoma, sans-serif;
+}
+
+.trends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.trend-card {
+  background: linear-gradient(135deg, #155a7e, #0f2b3d);
+  border-radius: 1rem;
+  padding: 2rem 1.8rem 1.5rem 1.8rem; /* Ajuste no padding inferior */
+  color: #eef4fa;
+  border-top: 4px solid #facc15;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  transition: transform 0.3s;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+
+.trend-card br {
+  display: none;
+}
+
+.trend-card:hover {
+  transform: translateY(-5px);
+}
+
+.trend-card strong {
+  color: #facc15;
+  font-size: 1.3rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.trend-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: auto; /
+}
+
+.trend-card:hover .read-more {
+  color: #facc15;
+  text-decoration: underline;
+}
+
+.read-more {
+  display: block;
+  text-align: right;
+  color: #bcd0e3;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* --- Setas & Pontos --- */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(44, 124, 182, 0.2);
+  color: #155a7e;
+  border: none;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn:hover {
+  background: #155a7e;
+  color: white;
+}
+.prev-btn {
+  left: 15px;
+}
+.next-btn {
+  right: 15px;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #bcd0e3;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dot.active,
+.dot:hover {
+  background: #2c7cb6;
+  transform: scale(1.2);
+}
+
+@media (max-width: 950px) {
+  .market-share-style {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .ms-text p,
+  .ms-text li {
+    text-align: left;
+  }
+  .slide-content {
+    padding: 2rem 2rem 4rem 2rem;
+  }
+}
+
+/* ==============================================
+   AJUSTES LIGHTBOX NO CARROSSEL (Lupa de Zoom)
+   ============================================== */
+.zoomable-img {
+  position: relative;
+  cursor: zoom-in;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.zoomable-img img {
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.zoomable-img:hover img {
+  transform: scale(1.03);
+}
+
+.zoom-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(15, 23, 42, 0.7);
+  color: #facc15;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: translateY(10px);
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.zoomable-img:hover .zoom-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================================
+   IMPRESSÃO: "Desenrolando" o Carrossel
+   ============================================== */
+@media print {
+  .carousel-container {
+    overflow: visible !important;
+    height: auto !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 1rem 0 !important;
+    max-width: 100% !important;
+  }
+  .carousel-track {
+    display: block !important;
+    transform: none !important;
+  }
+  .carousel-slide {
+    display: block !important;
+    margin-bottom: 4rem;
+    page-break-inside: avoid;
+  }
+  .slide-content {
+    padding: 1rem 0;
+  }
+  .carousel-btn,
+  .carousel-dots,
+  .zoom-icon {
+    display: none !important;
+  }
+  .zoomable-img {
+    cursor: default !important;
+  }
+  .trend-card {
+    background: #f4f8fb !important;
+    color: #1f3a4b !important;
+    border: 1px solid #155a7e !important;
+    border-top: 4px solid #155a7e !important;
+    box-shadow: none !important;
+  }
+  .trend-card strong {
+    color: #155a7e !important;
+  }
+}
+
+/* ==============================================
+   IMPRESSÃO: "Desenrolando" o Carrossel
+   ============================================== */
+@media print {
+  .carousel-container { overflow: visible !important; height: auto !important; background: none !important; border: none !important; box-shadow: none !important; margin: 1rem 0 !important; max-width: 100% !important; }
+  .carousel-track { display: block !important; transform: none !important; }
+  .carousel-slide { display: block !important; margin-bottom: 4rem; page-break-inside: avoid; }
+  .slide-content { padding: 1rem 0; }
+  .carousel-btn, .carousel-dots, .zoom-icon { display: none !important; }
+  .zoomable-img { cursor: default !important; }
+  .trend-card { background: #f4f8fb !important; color: #1f3a4b !important; border: 1px solid #155a7e !important; border-top: 4px solid #155a7e !important; box-shadow: none !important; display: block !important; }
+  .trend-card strong { color: #155a7e !important; }
+  
+  /* 🟢 MÁGICA 3: Remove as reticências e mostra o texto todo no PDF */
+  .trend-text {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+  
+  /* Esconde o botão "Ler mais" na impressão */
+  .read-more {
+    display: none !important;
+  }
+}

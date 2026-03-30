@@ -1,0 +1,96 @@
+/* ==============================================
+   LIGHTBOX MODAL (AMPLIAÇÃO DE IMAGENS)
+   ============================================== */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 12, 22, 0.95);
+  backdrop-filter: blur(10px);
+  overflow: auto; /* PERMITE SCROLL na página inteira quando a imagem é gigante */
+  text-align: center; /* Centraliza horizontalmente */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out; /* Clique no fundo para fechar */
+}
+
+.lightbox-modal.is-visible {
+  display: block; /* Mudar de flex para block é o segredo para o scroll funcionar */
+  opacity: 1;
+}
+
+/* O botão fechar precisa ficar fixo na tela para não sumir no scroll */
+.lightbox-close {
+  position: fixed;
+  top: 25px;
+  right: 35px;
+  width: 50px;
+  height: 50px;
+  background-color: #facc15;
+  color: #0f2b3d;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  z-index: 10001;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
+
+.lightbox-content {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto; /* Espaço para respirar */
+  cursor: default;
+}
+
+.lightbox-content img {
+  display: block;
+  max-width: 90vw; /* Inicialmente limita a largura à tela */
+  max-height: 85vh; /* Inicialmente limita a altura à tela */
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  object-fit: contain;
+  cursor: zoom-in; 
+  transition: max-width 0.3s ease, max-height 0.3s ease;
+}
+
+.lightbox-content img.zoomed {
+  max-width: 2500px; 
+  max-height: none; 
+  width: auto;
+  height: auto;
+  cursor: zoom-out; 
+}
+
+.lightbox-caption {
+  margin-top: 15px;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+@media print {
+  .lightbox-modal { display: none !important; }
+}

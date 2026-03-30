@@ -1,0 +1,92 @@
+/* ==============================================
+   RODAPÉ E CONCLUSÃO
+   ============================================== */
+.conclusion-block {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #155a7e 0%, #0f2b3d 100%);
+  border-radius: 2rem;
+  padding: 3.5rem 5rem;
+  box-shadow: 0 20px 40px rgba(15, 43, 61, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.conclusion-block::before {
+  content: '“';
+  position: absolute;
+  top: -40px;
+  left: 30px;
+  font-size: 15rem;
+  color: rgba(255, 255, 255, 0.04);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.conclusion-block h2 {
+  color: #facc15;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  border-left: none;
+}
+
+.conclusion-block p {
+  color: #e2e8f0;
+  line-height: 1.8;
+  font-size: 1.25rem;
+  margin: 0 auto;
+  text-align: justify;
+  position: relative;
+  z-index: 2;
+  max-width: 95%;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.github-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(44, 124, 182, 0.3);
+}
+
+.github-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Tahoma, sans-serif;
+  font-size: 0.95rem;
+  color: #155a7e;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+  background: rgba(44, 124, 182, 0.08);
+  transition: all 0.3s ease;
+}
+
+.github-footer a:hover {
+  background: #155a7e;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(21, 90, 126, 0.2);
+}
+
+.github-footer svg { transition: stroke 0.3s ease; }
+
+@media print {
+  .github-footer { display: none; }
+}
